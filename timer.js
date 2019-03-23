@@ -9,9 +9,14 @@ function timer() {
         alert("Input must be a positive number");
     }
 
-    for (let i = number; i > -1; i--) {
-        divTimer.innerHTML = "Countdown " + i + "...";
-        console.log(i);
+    setTimeout(countdown, 1000);
+    function countdown() {
+
+        for (let i = number; i > -1; i--) {
+            divTimer.innerHTML = "Countdown " + i + "...";
+            console.log(i);
+        }
+
     }
 
 
