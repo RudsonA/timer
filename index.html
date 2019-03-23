@@ -9,12 +9,11 @@
 <body>
 
     <form action="" method="post">
-        <label>Input number: </label> <input type="text" name="number" id="number">
-        <button onclick="timer()">start</button>
+        <label>Input number: </label> <input type="number" name="number" tabindex="10" id="number">
+        <input type="text" maxlength="3" value="start" onclick="timer()"></input>
     </form>
     
     <div id="timer">
-        <label>Countdown</label> 
     </div>
 
     <script src="timer.js"></script>
