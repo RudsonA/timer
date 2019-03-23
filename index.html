@@ -9,10 +9,10 @@
 <body>
 
     <form action="" method="post">
-        <label>Input number: </label> <input type="text" name="number" maxlength="3" tabindex="10" id="number">
-        <input type="button" value="start" onclick="timer()"></input>
+        <label>Input number: </label> <input type="text" name="number" maxlength="3" id="number">
+        <input type="button" value="start" id="button" onkeypress="timer()" onclick="timer()"></input>
     </form>
-    
+            
     <div id="timer">
     </div>
 
