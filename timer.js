@@ -1,55 +1,29 @@
 "use strict";
 
-function timer() {
+function timer() { 
+// Getting the value submitted
+let day = document.querySelector("#days").value; 
+let hour = document.querySelector("#hours").value;
+let min = document.querySelector("#minutes").value;
+let sec = document.querySelector("#seconds").value; 
 
-    let divTimer = document.getElementById("timer");
-    let number = document.getElementById("number").value;
+// Converting the values to a workable format
+day = day * 1000 * 60 * 60 * 24; 
+hour = hour * 1000 * 60 * 60; 
+min = min * 1000 * 60; 
+sec = sec * 1000; 
 
-    if (isNaN(number) || number < 1) {
-        alert("Input must be a positive integer");
+let inputAmt = day + hour + min + sec; 
 
-    }
+let x = setInterval(function() {
+    
+    let days = Math.floor(inputAmt / (1000 * 60 * 60 * 24)); 
+    let hours = Math.floor((inputAmt % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    let minutes = Math.floor((inputAmt % (1000 * 60 * 60)) / (1000 * 60));
+    let seconds = Math.floor((inputAmt % (1000 * 60)) / 1000);
 
-    let n = number;
-    divTimer.innerHTML = "Countdown: " + n + " seconds left...";
-    function subtraction() {
-        if (n == 0) {
-            divTimer.innerHTML = "TIMES UP!";
-            return;
-        }
-        n = n - 1;
-        console.log(n);
-        divTimer.innerHTML = "Countdown: " + n + " seconds left...";
+    // document.querySelector()
+     
+}, 1000)
 
-    }
-
-    setInterval(subtraction, 1000);     
-
-    subtraction();
 }
-
-    //     number *= 1000;
-    //     for (let i = number; i > -1; i--) {
-    //         let x = i/1000;
-    //         setTimeout(function () {
-
-    //             divTimer.innerHTML = "Countdown " + x + "...";
-    //             // divTimer.innerHTML = "Countdown " + i + "...";
-
-    //         }, 1000);
-    //         console.log(Math.round(x));
-    //     }
-    // }
-
-    // function countdown() {
-    //     setTimeout(timer(), 1000);
-    // }
-
-    // function enterOnPress() {
-    //     let x = event.keyCode;
-    //     console.log(x);
-    //     if (x == 13) {
-    //         timer();
-    //     }
-    // }
-    // document.addEventListener("keydown", enterOnPress());
